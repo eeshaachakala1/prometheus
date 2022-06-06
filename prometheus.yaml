@@ -84,6 +84,10 @@ scrape_configs:
       regex: (.+)
       target_label: __metrics_path__
       replacement: /api/v1/nodes/${1}/proxy/metrics/cadvisor
+      
+  - job_name: 'jmeter'
+    static_configs:
+    - targets: ['jmeter-0-1:9270']
   
   - job_name: 'mysql'
    
